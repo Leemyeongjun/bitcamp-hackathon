@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="kr">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hackathon</title>
+  <title>심야약국</title>
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/lateNight Pharmacy.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-  <div class="main-wrap">
-    <div class="header">
-      <input type="text" id="input">
-      <input type="button" value="입력" id="btn1">
-    </div>
-    <div class="body">
-      <div id="textBox"></div>
-    </div>
-    <div class="footer">
+  <div class="container">
+    <h1>🌙심야 약국</h1>
+    <p>밤늦게 갑자기 아파도 걱정 없도록,</p>
+    <p>가장 가까운 심야 약국을 알려드려요 🏣</p>
+    <form id="form">
+      <input id="date" type="datetime-local" />
+      <!-- <button type="button" class="btn btn-primary btn-sm" style="width: 4rem">검색</button> -->
+    </form>
+    <div id="map"></div>
+    <div class="card-list">
 
     </div>
   </div>
-<script src="js/script.js"></script>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- <script src="request Data.js"></script> -->
+
+  <script src="js/lateNight Pharmacy.js"></script>
+
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=172ef0b5421c741c3f83cb9113813187"> </script>
+
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=drawing"></script>
+
+  <script>
+    // 지도 표시하기. HTML에 있어야 함
+    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+
+    var options = { //지도를 생성할 때 필요한 기본 옵션
+      center: new kakao.maps.LatLng(37.498095, 127.027610), //지도의 중심좌표.
+      level: 3 //지도의 레벨(확대, 축소 정도)
+    };
+
+    var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+  </script>
+
+
+
 </body>
+
 </html>
