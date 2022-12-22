@@ -8,16 +8,83 @@ const app = express();
 
 app.use(express.urlencoded({extended: true}));
 
-// let start = 1001;
-// let end = 2000;
 
 app.get('/hackathon', (req, res) => {   
 
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Content-Type', 'application/json; charset=UTF-8');
 
-  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/bikeList/1/1000/";
-  // let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/bikeList/" + start + "/" + end +"/";
+  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/TbPharmacyOperateInfo/1/1000/";
+
+  request.get({
+    uri: openApiUrl
+  }, (error, reponse, body) =>{
+    res.send(body);
+  });
+});
+
+app.get('/hackathon2', (req, res) => {   
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json; charset=UTF-8');
+
+  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/TbPharmacyOperateInfo/1001/2000/";
+
+  request.get({
+    uri: openApiUrl
+  }, (error, reponse, body) =>{
+    res.send(body);
+  });
+});
+
+app.get('/hackathon3', (req, res) => {   
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json; charset=UTF-8');
+
+  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/TbPharmacyOperateInfo/2001/3000/";
+
+  request.get({
+    uri: openApiUrl
+  }, (error, reponse, body) =>{
+    res.send(body);
+  });
+});
+
+app.get('/hackathon4', (req, res) => {   
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json; charset=UTF-8');
+
+  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/TbPharmacyOperateInfo/3001/4000/";
+
+  request.get({
+    uri: openApiUrl
+  }, (error, reponse, body) =>{
+    res.send(body);
+  });
+});
+
+app.get('/hackathon5', (req, res) => {   
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json; charset=UTF-8');
+
+  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/TbPharmacyOperateInfo/4001/5000/";
+
+  request.get({
+    uri: openApiUrl
+  }, (error, reponse, body) =>{
+    res.send(body);
+  });
+});
+
+app.get('/hackathon6', (req, res) => {   
+
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json; charset=UTF-8');
+
+  let openApiUrl = "http://openapi.seoul.go.kr:8088/6a62515758326d7938397967674b4f/json/TbPharmacyOperateInfo/5001/6000/";
 
   request.get({
     uri: openApiUrl

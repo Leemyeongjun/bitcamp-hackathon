@@ -1,11 +1,27 @@
-let input = document.querySelector("#input");
-
 let info;
 
-// https://github.com/randyhkim/seoul-bike/tree/master/public 참조주소
-// https://data.seoul.go.kr/dataList/OA-15493/A/1/datasetView.do# 따릉이 주소
+let arr = [];
+let arr2 = [];
+let arr3 = [];
+let arr4 = [];
+let arr5 = [];
+let arr6 = [];
+let array = [];
 
-document.querySelector("#btn1").addEventListener("click", function() {
+(function main() {
+  list1();
+  list2();
+  list3();
+  list4();
+  list5();
+  list6();
+
+  array = arr.concat(arr2, arr3, arr4, arr5, arr6);
+
+  console.log(array);
+})();
+
+function list1() {
   let xhr = new XMLHttpRequest();
 
   xhr.open(
@@ -15,18 +31,88 @@ document.querySelector("#btn1").addEventListener("click", function() {
 
   info = JSON.parse(xhr.responseText);
 
-  let rackTotCnt = 0, // 거치대 개수
-      stationName = "", // 대여소 이름
-      parking = 0, // 자전거 주차총건수
-      stationLatitude = 0, // 위도
-      stationLongitude = 0, // 경도
-      stationId = ""; // 대여소ID
+  for (let value in info.TbPharmacyOperateInfo.row) {
 
-  // info.rentBikeStatu.row.forEach((value, i) => {
-  //   stationName = info[i]["stationName"];
-  //   parking = info[i]["parking"];
-  //   stationId = info[i]["stationId"];
-  // });
+    arr[value] = info.TbPharmacyOperateInfo.row[value];
+  }
+};
 
-  console.log(info);
-});
+function list2() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "http://localhost:3000/hackathon2", false);
+  xhr.send();
+
+  info = JSON.parse(xhr.responseText);
+
+  for (let value in info.TbPharmacyOperateInfo.row) {
+
+    arr2[value] = info.TbPharmacyOperateInfo.row[value];
+  }
+};
+
+function list3() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "http://localhost:3000/hackathon3", false);
+  xhr.send();
+
+  info = JSON.parse(xhr.responseText);
+
+  for (let value in info.TbPharmacyOperateInfo.row) {
+
+    arr3[value] = info.TbPharmacyOperateInfo.row[value];
+  }
+};
+
+function list4() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "http://localhost:3000/hackathon4", false);
+  xhr.send();
+
+  info = JSON.parse(xhr.responseText);
+
+  for (let value in info.TbPharmacyOperateInfo.row) {
+
+    arr4[value] = info.TbPharmacyOperateInfo.row[value];
+  }
+};
+
+function list5() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "http://localhost:3000/hackathon5", false);
+  xhr.send();
+
+  info = JSON.parse(xhr.responseText);
+
+  for (let value in info.TbPharmacyOperateInfo.row) {
+
+    arr5[value] = info.TbPharmacyOperateInfo.row[value];
+  }
+};
+
+function list6() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "http://localhost:3000/hackathon6", false);
+  xhr.send();
+
+  info = JSON.parse(xhr.responseText);
+
+  for (let value in info.TbPharmacyOperateInfo.row) {
+
+    arr6[value] = info.TbPharmacyOperateInfo.row[value];
+  }
+};
