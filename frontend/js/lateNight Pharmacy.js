@@ -1,3 +1,5 @@
+// findLocation();
+
 const cardList = document.querySelector('.card-list');
 const card = document.getElementsByClassName('card');
 
@@ -31,12 +33,9 @@ let userSelWeekday = now.getDay();  // 선택한 요일 월: 1, 화: 2, 수: 3, 
 let userSelCloseTime = 2400;  // 선택한 시간
 let appendCount = 999;  // 사용자 입력 목록 보여줄 개수
 
+// 강남역 중심부 위도, 경도  37.498095, 127.027610
 var userLat = 37.498095;
 var userLng = 127.027610;
-
-
-// 강남역 중심부 위도, 경도  37.498095, 127.027610
-
 
 
 
@@ -403,22 +402,19 @@ function showMarker() {
 }
 
 
-// 현위치 받아오는 함수
-function findLocation() {
+// // 현위치 받아오는 함수
+// function findLocation() {
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      userLat = position.coords.latitude;
-      userLng = position.coords.longitude;
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition((position) => {
+//       myLat = position.coords.latitude;
+//       myLng = position.coords.longitude;
 
-      geoLat = userLat;
+//       console.log(myLat);
+//       setMyCenter();
+//     });
 
-      setMyCenter();
-    });
-
-  } else {
-    alert("위치 찾기 실패");
-  }
-}
-
-findLocation();
+//   } else {
+//     alert("위치 찾기 실패");
+//   }
+// }
